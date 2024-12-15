@@ -20,10 +20,12 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://chat-application-frontend-psi.vercel.app"],
+    origin: ["http://localhost:5173", "https://chat-application-frontend-ov14bo4de-faizwebworks-projects.vercel.app"],
     credentials: true,
   })
 );
+
+app.options("*", cors());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
