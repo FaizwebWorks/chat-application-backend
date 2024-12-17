@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://chat-application-frontend-ov14bo4de-faizwebworks-projects.vercel.app"],
+    origin: true,
     credentials: true,
   })
 );
@@ -30,12 +30,10 @@ app.options("*", cors());
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-
 server.listen(PORT, () => {
   console.log("server is running on PORT:" + PORT);
   connectDB();
 });
-
 
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static(path.join(__dirname, "../frontend/dist")));
