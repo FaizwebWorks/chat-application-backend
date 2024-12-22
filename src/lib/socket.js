@@ -7,7 +7,8 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: true,
+    origin: "https://chat-application-frontend-qsacur3a0-faizwebworks-projects.vercel.app/",
+    credentials: true
   },
 });
 
